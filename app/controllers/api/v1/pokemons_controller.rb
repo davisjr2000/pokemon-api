@@ -21,7 +21,7 @@ class Api::V1::PokemonsController < Api::V1::BaseController
   private
 
   def pokemon_params
-    params.permit(:name, :description)
+    params.require(:pokemon).permit(:name, :description)
   end
 
   def render_error
